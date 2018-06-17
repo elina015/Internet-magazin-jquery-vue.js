@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang = "ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", user-scalable=no, initial-scale=1.0, maximum-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Мужская одежда</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="shortcut icon" href="http://www.stickpng.com/assets/images/585990604f6ae202fedf28d3.png">
+  </head>
+
+<body>
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-1 pt-1">
+          <a href="index.html"><img src="img/logo.png" width="50px" align="left" style="padding-top: 7px;"></a>
+        </div>
+        <div class="col-9  text-center ">
+          <div class="nav-scroller  mb-2">
+            <nav class="nav d-flex justify-content-between">
+              <a class="p-2 text-muted" href="index.html">Женщины</a>
+              <a class="p-2 text-muted" href="mens.html">Мужчины</a>
+              <a class="p-2 text-muted" href="#">Дети</a>
+              <a class="p-2 text-muted" href="#">Дома</a>
+              <a class="p-2 text-muted" href="#">Распродажа</a>
+            </nav>
+          </div>
+        </div>
+        <a href="#"><img src="img/cart.png" width="50px" ></a>
+      </div>
+    </header>
+  </div>
+
+  <div class="container pt-5" id="app">
+    <div class="row mb-3">
+      <div class="col">
+        <h2 align="center">Мужская одежда</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="search">Найти товар: </label>
+          <input 
+          type="text" 
+          class="form-control" 
+          id="search" name="" 
+          placeholder="Название товара.."
+          v-model="search"
+          >
+        </div>
+
+        <hr>
+
+        <ul class="list-group">
+          <!-- Dlia kajdoi iteratii sozd obiect good v massive goods -->
+          <li 
+            v-for="(good, index) of filteredGoods" 
+            class="list-group-item list-group-item-action pointer"
+            v-on:click="selectGood(index)"
+            :class="{'active': selectedGoodIndex === index}"
+            >
+            {{ good.name }}  
+            <img v-bind:src="good.image" width="30px;" align="right">
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-8 pt-3"> <!-- Правая секция-->
+        <div class="row">
+          <div class="col-md-5"><!-- Картинка-->
+            <h2>{{good.name}}</h2>
+            <img 
+              v-bind:src="good.image">
+          </div>
+          <div class="col-md-7 pt-2"><!-- Описание-->
+            <h5>Детали товара</h5>
+            <ul>
+              <li>Страна-производитель  <strong> {{good.country}} </strong> </li>
+              <li>Цвет  <strong>{{good.color}} </strong> </li>
+              <li>Размер  <strong> {{good.size}} </strong> </li>
+              <li>Цена  <strong> {{good.price}} </strong> </li>
+
+              <div class="descriptionblock">
+                <transition name="description">
+                  <p v-if = "descriptionVisibility"> 
+                </transition>
+                {{good.description}} </p>
+              </div>
+
+              <button 
+                class="btn btn-outline-secondary mr-3" 
+                v-on:click="descriptionVisibility = !descriptionVisibility"
+                > {{descriptionBtnText}} </button>
+              <button class="btn btn-primary" @click="modalVisibility = true">Купить</button>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-3" v-if="logs.length !== 0">
+      <div class="col-md-12">
+        <ul class="list-group">
+          <li
+            v-for="log in logs"
+            class="list-group-item "
+            :class="{
+              'list-group-item-success':log.type === 'ok'
+            }"
+          > 
+          {{log.text}} <br> {{log.date | date }} <!-- Polucaem js obiect propskaem cerez filtr date -->
+          </li>     
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal fade show "v-if="modalVisibility" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Вы действительно хотите купить это товар?</h5>
+            <button 
+              type="button" 
+              class="close" 
+              data-dismiss="modal" 
+              aria-label="Close"
+              @click="modalVisibility = false"
+              >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Выбранный товар: <strong> {{good.name}}</strong></p>
+            <ul>
+              <li>Страна-производитель <strong> {{good.country}} </strong> </li>
+              <li>Цвет <strong>{{good.color}} </strong> </li>
+              <li>Размер <strong> {{good.size}} </strong> </li>
+              <li>Цена <strong> {{good.price}} </strong> </li>
+              <img 
+              v-bind:src="good.image">
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button 
+              type="button" 
+              class="btn btn-outline-success"
+              @click="newOrder"
+              >Купить</button>
+            <button 
+              type="button" 
+              class="btn btn-secondary" 
+              data-dismiss="modal"
+              @click="cancelOrder"
+              >Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop fade show " v-if="modalVisibility"></div>
+
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

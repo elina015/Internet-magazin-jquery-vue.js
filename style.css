@@ -1,0 +1,166 @@
+header {
+	border-bottom:1px solid lightgrey;
+}
+.navbar-collapse{
+	padding-top: 15px;
+}
+.button .navbar-toggle{
+	background-color: lightgrey;
+}
+.navbar-brand{
+	margin-right: 30px;
+}
+.nav > li > a {
+    color: #777;
+}
+.reclama > a > img{
+	width: 100%;
+	margin: 0;
+}
+.masthead{
+	padding-top:20px;
+	margin-bottom: -15px; 
+}
+a h3{
+	color: black;
+}
+section{
+	margin-left:90px;
+}
+footer {
+	background-color: #2d232c;
+	color: white;
+	padding: 20px;
+	font-family: helvetica;
+}
+.navbar-toggle{
+	background-color: grey;
+}
+footer >.container-fluid >.row >.col-md-4 >ul >li >a{
+	color:#b2abb1;
+}
+button > .navbar-toggle{
+	background-color: green;
+}
+.item_box > .container >  .row > .col-lg-4 >.cloth button{
+	margin:10px;
+}
+.single-goods, #goodsmens > .rubawki,#goodsmens > .maiki,#goodsmens > .tolstovki{
+	margin: 18px;
+	float: left;
+	text-align: center;
+}
+.single-good button, #goodsmens button{
+	display:block;
+	margin:20px auto;
+}
+#steps form p{
+	float:left;
+	clear:both;
+	margin:5px 0px;
+	background-color:#f4f4f4;
+	border:1px solid #fff;
+	width:400px;
+	padding:10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow:0px 0px 3px #aaa;
+	-webkit-box-shadow:0px 0px 3px #aaa;
+	box-shadow:0px 0px 3px #aaa;
+}
+#steps form p label{
+	width:160px;
+	float:left;
+	text-align:right;
+	margin-right:15px;
+	line-height:26px;
+	color:#666;
+	text-shadow:1px 1px 1px #fff;
+	font-weight:bold;
+}
+#steps form input:not([type=radio]),#steps form textarea,#steps form select{
+	background: #ffffff;
+	border: 1px solid #ddd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	outline: none;
+	padding: 5px;
+	width: 200px;
+	float:left;
+}
+#steps form input:focus{
+	-moz-box-shadow:0px 0px 3px #aaa;
+	-webkit-box-shadow:0px 0px 3px #aaa;
+	box-shadow:0px 0px 3px #aaa;
+	background-color:#FFFEEF;
+}
+#steps form p.submit{
+	background:none;
+	border:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+.plus, .minus,.add-to-cart,.delete{
+	 margin:10px;	
+	 text-align:center; 
+	 padding:10px 20px; 
+	 border:solid 1px white; 
+	 -webkit-border-radius:50px;
+	 -moz-border-radius:50px; 
+	 border-radius: 50px; 
+	 font:15px Arial, Helvetica, sans-serif; 
+	 color:#000000; 
+	 background:#ffffff; 
+	 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;    
+}
+.plus:hover,  .minus:hover,.add-to-cart:hover,.delete:hover{
+	border:solid 1px black; 
+}
+.reclama{
+	margin-top: 10% ;
+}
+hr{
+	margin-top: 50px;
+}
+footer{
+	margin-top: 5% ;
+}
+.tovari{	
+	padding-right: 50px;
+}
+.oplata{
+	border-left: 1px solid grey;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+#my-cart >h4{
+	text-align: right;
+}
+#my-cart >img{
+	text-align: center;
+}
+
+/*Вариант 5. Интернет-магазин
+Запланированный веб-интерфейс, который позволяет заказывать продукты в интернет-магазине. Интерфейс должен позволить вам выбрать (из предопределенного списка):
+- категория продукта (например, мышь).
+- продукт (узор мышки).
++ указав количество единиц.
+- избрать из списка компании, которая будет поставляться (у каждой есть другая цена)
++ указав адрес, по которому будет производиться доставка.
++ имя получателя.
++ указание номера телефона (ввести номера можно только в форме +373 99999999).
++ выбор метода оплаты.
+- рассчитать цену выбранной конфигурации (у каждого компонента указанная цена)
++ чересстрочный интерфейс должен иметь адаптивный дизайн.
+Дополнительные сборы:
++ что можно добавить больше продуктов в одном порядке.
++ можно изменить количество единиц продукта.
++ возможно удалить продукт и добавить другое.
+- Проверьте доступность продукта на складе до завершения заказа (если на складе 5 штук, невозможно заказать 6 единиц).
+- можно выбрать цвет продукта из списка (только для продуктов, где указан этот параметр).
+- тот же продукт разных цветов, может иметь другую цену

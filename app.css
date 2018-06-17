@@ -1,0 +1,21 @@
+.descriptionblock{
+	height:55px;
+}
+.modal{
+	display:block;
+}
+li {
+    list-style-type: none; 
+}
+header {
+	border-bottom: 1px solid lightgrey;
+}
+
+/* Анимация */
+.description-enter-active, .description-leave-active {
+	transition: all .5s;
+}
+.description-enter, .description-leave-to{ // nacialinoe sostoianie i to k kotoromu stremitsa
+	transform:translateX(50px);
+	opacity: 0;
+}

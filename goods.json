@@ -1,0 +1,67 @@
+{
+	"123": {
+		"name": "Блузка",
+		"cost": 500,
+		"description": "Jamper",
+		"image": "img/1j.jpeg",
+		"quantity":5,
+		"color":{
+			"pink": "img/1j.jpeg",
+			"black": "img/1c.jpeg"
+		}
+	},
+	"123457": {
+		"name": "Блузка",
+		"cost": 500,
+		"description": "Blouse",
+		"image": "img/6j.jpeg",
+		"quantity":5
+	},
+	"123456": {
+		"name": "Рубашка",
+		"cost": 400,
+		"description": "Blouse",
+		"image": "img/5j.jpeg",
+		"quantity":5
+	},
+	
+	"123458": {
+		"name": "Рубашка",
+		"cost": 450,
+		"description": "Blouse",
+		"image": "img/7j.jpeg",
+		"quantity":5
+	},
+	"12345889": {
+		"name": "Платье",
+		"cost": 300,
+		"description": "Dress",
+		"image": "img/8j.jpg",
+		"quantity":5
+		
+	},
+	"12345880": {
+		"name": "Платье",
+		"cost": 500,
+		"description": "Dress",
+		"image": "img/9j.jpg",
+		"quantity":5
+
+	},
+	"12345898": {
+		"name": "Платье",
+		"cost": 500,
+		"description": "Платье",
+		"image": "img/10j.jpg",
+		"quantity":5
+
+	},
+	"12345808": {
+		"name": "Платье",
+		"cost": 750,
+		"description": "Платье",
+		"image": "img/11j.jpg",
+		"quantity":5
+
+	}
+}

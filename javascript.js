@@ -58,10 +58,6 @@ function checkCart(){
 }
 
 
-//https://www.youtube.com/watch?v=J8Bo8DhX05o&t=922s
-//https://ruseller.com/lessons.php?rub=36&id=634
-//w3.org.ua
-
   
 
 
